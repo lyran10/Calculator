@@ -49,6 +49,7 @@ const icon = (icon) => {
             <div className="card d-flex align-items-center" key={index} style={{width:"250px",height:"300px"}}>
                 <p className="pt-3">{ele.CityName}</p>
                 <img src={icon(ele.WeatherIcon)} style={{height:"165px"}}/>
+                <p className="pt-3">{ele.WeatherText}</p>
                 <p>{`${ele.Temperature.Metric.Value}°C / ${ele.Temperature.Imperial.Value}°F`}</p>
                 <button id={ele.CityName} onClick={handleClick} style={{width:"50%", border : "solid 1px black"}} className="btn btn-info mb-2">Remove</button>
             </div>
