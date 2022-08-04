@@ -4,7 +4,7 @@ import "./style.css"
 import {GiHamburgerMenu } from "react-icons/gi"
 import {useState} from "react"
 
-export const NavBar = () => {
+export const NavBar = () => {// This is the navbar component where it will display the Home and favourites link. Used react-router-dom. 
   const [menu,setMenu] = useState("responsive-menu")
 
   const handleClick = () => {
@@ -20,7 +20,6 @@ export const NavBar = () => {
           <div className="d-flex gap-5 position-relative">
             <Link className="navLink" to="/">Home</Link>
             <Link className="navLink" to="/favourites">Favourites</Link>
-            
           </div>
           <div className="hamIcon">
           <GiHamburgerMenu onClick = {handleClick}/>

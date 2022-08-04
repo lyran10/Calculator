@@ -1,7 +1,5 @@
 import {citySearch,cityKey,forecast} from "./fetch.js"
 import { useState,useEffect} from "react"
-import day from "../img/day.svg"
-import night from "../img/night.svg"
 import "./style.css"
 
 export const Weather = (props) => {
@@ -82,13 +80,9 @@ const icon = (icon) => {
   return `https://developer.accuweather.com/sites/default/files/${icon.toString().length === 1? "0" + icon.toString(): icon}-s.png`
 }
 
-console.log(forecastData)
-
   return(
 <main className="d-flex justify-content-center mt-3">
      {forecastData? <div className={`card d-flex position-relative ${translate} bg-${data.data[0].IsDayTime?"light":"dark"}`} style={{width : "75%", minHight:"550px"}}>
-
-      {/* {data.data[0].IsDayTime?<img className="card-img-top" style={{width:"75%",minHeight:"100%"}}  src={day} alt="weather" />:<img className="" style={{height:"200px",width:"75%"}}  src={night} alt="weather" />} */}
 
   <div className="info d-flex justify-content-between" style={{width:"100%"}}>
 
@@ -101,7 +95,7 @@ console.log(forecastData)
     </div>
 
     <div>
-      <button onClick={handleClick} className={`${added} btn btn-outline-${data.data[0].IsDayTime?"primary":"light"} mt-3 position-relative`}>Add To Favourites</button>
+      <button onClick={handleClick} className={`favButton ${added} btn btn-outline-${data.data[0].IsDayTime?"primary":"light"} mt-3 position-relative`} style={{fontSize:"13px"}}>Add To Favourites</button>
       <div>
       <p className={`celAndFah p-5 text-${data.data[0].IsDayTime?"dark":"light"}`}>{`${data.data[0].Temperature.Metric.Value}°C / ${data.data[0].Temperature.Imperial.Value}°F`}</p>
       </div>
