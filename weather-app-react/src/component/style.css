@@ -17,10 +17,43 @@
   font-size: larger;
 }
 
-.navLink:hover{
+.navLink,.hamNavLink:hover{
   transform: scale(0.9);
   color: black;
   opacity: 0.5;
+}
+
+.hamNavLink{
+  transform: scale(0.8);
+  transition: 0.1s;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+  font-size: larger;
+}
+
+.navLink,.hamNavLink:hover{
+  transform: scale(0.9);
+  color: black;
+  opacity: 0.5;
+}
+
+.hamIcon{
+  display: none;
+  cursor: pointer;
+}
+
+.responsive-menu{
+  transform: translateX(-5000px);
+  transition: 0.3s;
+  z-index: 10;
+}
+
+.responsive-menuBack{
+  transform: translateX(0px);
+  transition: 0.3s;
+  z-index: 10;
 }
 
 /* search input */
@@ -50,14 +83,23 @@
   transition: 1s;
 }
 
-/* five days forecast cards */
-
-.absolute{
-  width: 100%;
-  top:45%;
-  left:0;
-  right:0;
+.weatherText{
+  font-size: 30px;
 }
+
+.weatherIcon{
+  height:150px;
+}
+
+.celAndFah{
+  font-size : 40px;
+}
+
+.cityAndCountry{
+  font-size: 20px;
+}
+
+/* five days forecast cards */
 
 .boxShadow{
   transform: scale(0.8);
@@ -108,3 +150,102 @@
   transition: 1s;
   transform: translateX(-120px);
 }
+
+
+/* media query */
+ 
+@media all and (min-width: 768px) and (max-width: 1024px) { 
+  .weatherText{
+    font-size: 25px;
+  }
+
+  .weatherIcon{
+    height:120px;
+  }
+ 
+  .celAndFah{
+    font-size : 30px;
+  }
+
+  .cityAndCountry{
+    font-size: 15px;
+  }
+}
+ 
+@media all and (min-width: 480px) and (max-width: 768px) { 
+  .weatherText{
+    font-size: 20px;
+  }
+
+  .weatherIcon{
+    height:100px;
+  }
+ 
+  .celAndFah{
+    font-size : 20px;
+  }
+
+  .cityAndCountry{
+    font-size: 10px;
+  }
+
+  .hamIcon{
+    display: block;
+  }
+
+  .navLink{
+    display: none;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 610px) { 
+  .weatherText{
+    font-size: 15px;
+  }
+
+  .weatherIcon{
+    height:80px;
+  }
+ 
+  .celAndFah{
+    font-size : 15px;
+  }
+
+  .cityAndCountry{
+    font-size: 10px;
+  }
+
+  .hamIcon{
+    display: block;
+  }
+
+  .navLink{
+    display: none;
+  }
+}
+ 
+@media all and (max-width: 480px) {
+  .weatherText{
+    font-size: 10px;
+  }
+
+  .weatherIcon{
+    height:60px;
+  }
+ 
+  .celAndFah{
+    font-size : 10px;
+  }
+
+  .cityAndCountry{
+    font-size: 10px;
+  }
+    
+  .hamIcon{
+    display: block;
+  }
+
+  .navLink{
+    display: none;
+  }
+ }

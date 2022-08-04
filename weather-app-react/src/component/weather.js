@@ -85,37 +85,37 @@ const icon = (icon) => {
 console.log(forecastData)
 
   return(
-<div className="d-flex justify-content-center mt-3">
-     {forecastData? <div className={`card d-flex position-relative ${translate}`} style={{width : "75%", height:"550px",overflow:"hidden"}}>
+<main className="d-flex justify-content-center mt-3">
+     {forecastData? <div className={`card d-flex position-relative ${translate} bg-${data.data[0].IsDayTime?"light":"dark"}`} style={{width : "75%", minHight:"550px"}}>
 
-      {data.data[0].IsDayTime?<img style={{width:"100%"}}  src={day} alt="weather" />:<img style={{width:"100%"}}  src={night} alt="weather" />}
+      {/* {data.data[0].IsDayTime?<img className="card-img-top" style={{width:"75%",minHeight:"100%"}}  src={day} alt="weather" />:<img className="" style={{height:"200px",width:"75%"}}  src={night} alt="weather" />} */}
 
-  <div className="d-flex justify-content-between position-absolute" style={{width:"100%"}}>
+  <div className="info d-flex justify-content-between" style={{width:"100%"}}>
 
-    <div className={`d-flex flex-row align-items-center text-${data.data[0].IsDayTime?"dark":"light"}`}>
-      <img src={icon(data.data[0].WeatherIcon)} className="img-fluid" alt="weather" style={{height:"150px",fill:"blue"}} />
-       <div className="d-flex justify-content-center align-items-start flex-column">
-      <span style={{fontSize : "30px"}}>{data.data[0].WeatherText}</span>
-      <span style={{fontSize : "20px"}} >{`${key.EnglishName}, ${key.Country.EnglishName}`}</span>
+    <div className={`d-flex justify-content-center align-items-center text-${data.data[0].IsDayTime?"dark":"light"}`}>
+      <img src={icon(data.data[0].WeatherIcon)} className="weatherIcon" alt="weather"/>
+       <div className="d-flex align-items-start flex-column">
+      <span className="weatherText" style={{fontWeight:"800"}}>{data.data[0].WeatherText}</span>
+      <span className="cityAndCountry" style={{fontWeight:"800"}} >{`${key.EnglishName}, ${key.Country.EnglishName}`}</span>
       </div>
     </div>
 
     <div>
-      <button onClick={handleClick} className={`${added} btn btn-outline-${data.data[0].IsDayTime?"primary":"light"} mt-3 position-relative`} style={{marginLeft:"30%"}}>Add To Favourites</button>
+      <button onClick={handleClick} className={`${added} btn btn-outline-${data.data[0].IsDayTime?"primary":"light"} mt-3 position-relative`}>Add To Favourites</button>
       <div>
-      <p className={`p-5 text-${data.data[0].IsDayTime?"dark":"light"}`} style={{fontSize : "40px"}}>{`${data.data[0].Temperature.Metric.Value}°C / ${data.data[0].Temperature.Imperial.Value}°F`}</p>
+      <p className={`celAndFah p-5 text-${data.data[0].IsDayTime?"dark":"light"}`}>{`${data.data[0].Temperature.Metric.Value}°C / ${data.data[0].Temperature.Imperial.Value}°F`}</p>
       </div>
     </div>
   </div>
 
-    <div className="d-flex absolute position-absolute">
+    <div className="d-flex flex-wrap justify-content-center">
       {forecastData.map((ele,index) => {
           let date = new Date(ele.Date)
           const sliced = date.toDateString().split(" ").slice(0,1)
           let day = sliced.toString()
 
           return(
-          <div key={index} className={`card d-flex flex-column gap-3 align-items-center boxShadow text-${data.data[0].IsDayTime?"dark":"light"}`} style={{width : "800px",height:"300px",backgroundColor:`${data.data[0].IsDayTime?"white":"#36454F"}`}}>
+          <div key={index} className={`card d-flex align-items-center boxShadow text-${data.data[0].IsDayTime?"dark":"light"}`} style={{width : "200px",height:"300px",backgroundColor:`${data.data[0].IsDayTime?"white":"#36454F"}`}}>
               <h4>{day}</h4>
               <img src={icon(ele.Day.Icon)} className="img-fluid" alt="weather" style={{height:"130px",width:"150px"}} />
               <p>{ele.Night.IconPhrase}</p>
@@ -127,6 +127,6 @@ console.log(forecastData)
     </div>
   </div>
   :<h1>Loading...</h1>}
-</div>
+</main>
 )
 }

@@ -30,12 +30,9 @@ console.log(data1)
 const handleClick = (e) => {
   let s = temperature.indexOf(e.target.id.toLowerCase())
   temperature.splice(s,s+1)
-  let splicedArray = [...temperature]
-  localStorage.setItem("city",JSON.stringify(splicedArray))
-  settemperature(splicedArray)
-  let mapped = [...new Map(data1.map(ele =>[ele["CityName"],ele])).values(),]
-  let filtered = mapped.filter(ele => ele.CityName != e.target.id)
-  setdata(filtered)
+  localStorage.setItem("city",JSON.stringify(temperature))
+  let removeDuplicate = [...new Map(data1.map(ele =>[ele["CityName"],ele])).values(),].filter(ele => ele.CityName != e.target.id)
+  setdata(removeDuplicate)
 }
 
 const icon = (icon) => {
