@@ -1,0 +1,110 @@
+*{
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Nav bar */
+.navbar{
+  background-color: #b0c4de;
+}
+
+.navLink{
+  transform: scale(0.8);
+  transition: 0.1s;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+  font-size: larger;
+}
+
+.navLink:hover{
+  transform: scale(0.9);
+  color: black;
+  opacity: 0.5;
+}
+
+/* search input */
+
+.input{
+  padding: 5px;
+  width: 40%;
+}
+
+.button{
+  padding: 5px;
+  border-color:  #b0c4de;
+  background-color:  #b0c4de;
+  color: white;
+}
+
+
+/* card */
+
+.translate{
+  transform: translateX(1500px);
+  transition: 1s;
+}
+
+.translateBack{
+  transform: translateX(0);
+  transition: 1s;
+}
+
+/* five days forecast cards */
+
+.absolute{
+  width: 100%;
+  top:45%;
+  left:0;
+  right:0;
+}
+
+.boxShadow{
+  transform: scale(0.8);
+  box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+  transition: 0.3s;
+}
+
+.boxShadow:hover{
+  transform: scale(0.9)
+}
+
+.added::before{
+  content: "added";
+  position: absolute;
+  left: 40%;
+  padding: 3px;
+  color: white;
+  border-radius: 5px;
+  opacity: 0;
+  background-color: black;
+}
+
+.animation::before{
+  display: flex;
+  content: "added";
+  padding: 3px;
+  color: white;
+  background-color: black;
+  position: absolute;
+  left: 40%;
+  border-radius: 5px;
+  color: white;
+  transition: 0.8s;
+  transform: translateX(-120px);
+}
+
+.opacity::before{
+  display: flex;
+  content: "added";
+  padding: 3px;
+  color: white;
+  background-color: black;
+  position: absolute;
+  left: 40%;
+  border-radius: 5px;
+  color: white;
+  opacity: 0;
+  transition: 1s;
+  transform: translateX(-120px);
+}
