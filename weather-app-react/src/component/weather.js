@@ -44,7 +44,7 @@ export const Weather = (props) => {
         console.log(error)
       })
 
-},[cityName])
+},[cityName,translate])
 
 const animation = (clas,time) =>{
   setTimeout(() => {
