@@ -86,19 +86,21 @@ const icon = (icon) => {
 
   <div className="info d-flex justify-content-between" style={{width:"100%"}}>
 
-    <div className={`d-flex justify-content-center align-items-center text-${data.data[0].IsDayTime?"dark":"light"}`}>
+    <div className={`d-flex weather justify-content-center align-items-center text-${data.data[0].IsDayTime?"dark":"light"}`}>
       <img src={icon(data.data[0].WeatherIcon)} className="weatherIcon" alt="weather"/>
        <div className="d-flex align-items-start flex-column">
       <span className="weatherText" style={{fontWeight:"800"}}>{data.data[0].WeatherText}</span>
       <span className="cityAndCountry" style={{fontWeight:"800"}} >{`${key.EnglishName}, ${key.Country.EnglishName}`}</span>
       </div>
+
     </div>
 
     <div>
-      <button onClick={handleClick} className={`favButton ${added} btn btn-outline-${data.data[0].IsDayTime?"primary":"light"} mt-3 position-relative`} style={{fontSize:"13px"}}>Add To Favourites</button>
+     
       <div>
-      <p className={`celAndFah p-5 text-${data.data[0].IsDayTime?"dark":"light"}`}>{`${data.data[0].Temperature.Metric.Value}°C / ${data.data[0].Temperature.Imperial.Value}°F`}</p>
+      <p className={`celAndFah text-${data.data[0].IsDayTime?"dark":"light"}`}>{`${data.data[0].Temperature.Metric.Value}°C / ${data.data[0].Temperature.Imperial.Value}°F`}</p>
       </div>
+      <button onClick={handleClick} className={`favButton ${added} btn btn-outline-${data.data[0].IsDayTime?"primary":"light"} position-relative`} style={{fontSize:"13px"}}>Add To Favourites</button>
     </div>
   </div>
 
@@ -111,7 +113,7 @@ const icon = (icon) => {
           return(
           <div key={index} className={`card d-flex align-items-center boxShadow text-${data.data[0].IsDayTime?"dark":"light"}`} style={{width : "200px",height:"300px",backgroundColor:`${data.data[0].IsDayTime?"white":"#36454F"}`}}>
               <h4>{day}</h4>
-              <img src={icon(ele.Day.Icon)} className="img-fluid" alt="weather" style={{height:"130px",width:"150px"}} />
+              <img src={icon(ele.Day.Icon)} className="img-fluid" alt="weather" style={{height:"150px",width:"150px"}} />
               <p>{ele.Night.IconPhrase}</p>
               <p className="">Max - {`${ele.Temperature.Maximum.Value}°F`}</p>
               <p>Min - {`${ele.Temperature.Minimum.Value}°F`}</p>
@@ -124,3 +126,5 @@ const icon = (icon) => {
 </main>
 )
 }
+
+

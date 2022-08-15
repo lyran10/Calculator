@@ -88,11 +88,14 @@
 }
 
 .weatherIcon{
-  height:150px;
+  height:100px;
 }
 
 .celAndFah{
   font-size : 40px;
+  padding-top:30px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .cityAndCountry{
@@ -158,10 +161,6 @@
   .weatherText{
     font-size: 25px;
   }
-
-  .weatherIcon{
-    height:120px;
-  }
  
   .celAndFah{
     font-size : 30px;
@@ -173,20 +172,17 @@
 }
  
 @media all and (min-width: 480px) and (max-width: 768px) { 
-  .weatherText{
-    font-size: 20px;
-  }
 
-  .weatherIcon{
-    height:100px;
-  }
- 
+  .info{
+    flex-direction: column;
+}
+
+.weather{
+  margin-right: 30px;
+}
+
   .celAndFah{
-    font-size : 20px;
-  }
-
-  .cityAndCountry{
-    font-size: 10px;
+    padding: 10px;
   }
 
   .hamIcon{
@@ -199,20 +195,15 @@
 }
 
 @media all and (min-width: 480px) and (max-width: 610px) { 
-  .weatherText{
-    font-size: 15px;
+.info{
+    flex-direction: column;
+  }
+  .weather{
+    margin-right: 30px;
   }
 
-  .weatherIcon{
-    height:80px;
-  }
- 
   .celAndFah{
-    font-size : 15px;
-  }
-
-  .cityAndCountry{
-    font-size: 10px;
+    padding: 10px;
   }
 
   .hamIcon{
@@ -225,20 +216,32 @@
 }
  
 @media all and (max-width: 480px) {
+  .info{
+    flex-direction: column;
+  }
+
+  .weather{
+    margin-right: 20px;
+  }
+
+  .celAndFah{
+    padding: 10px;
+  }
+
   .weatherText{
-    font-size: 10px;
+    font-size: 15px;
   }
 
   .weatherIcon{
-    height:60px;
+    height:80px;
   }
  
   .celAndFah{
-    font-size : 10px;
+    font-size : 20px;
   }
 
   .cityAndCountry{
-    font-size: 10px;
+    font-size: 12px;
   }
     
   .hamIcon{
