@@ -63,7 +63,7 @@ const handleClick = () => {
     found = JSON.parse(localStorage.getItem("city")).find(ele => ele.toLowerCase() === cityName.toLowerCase())
     }
  
-  if(found != undefined) return alert("already in favourites")  
+  if(found !== undefined) return alert("already in favourites")  
 
   if(localStorage.getItem("city") === null){
     let array = []
